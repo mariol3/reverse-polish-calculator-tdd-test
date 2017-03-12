@@ -4,6 +4,7 @@ import org.junit.Test;
 import java.math.BigDecimal;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 /**
  * Created by Mario Grimaldi <mario.grimaldi89@gmail.com> with <3
@@ -42,6 +43,14 @@ public class OperationsTest {
     public void testExecuteDivide() {
         calculator.execute(Operation.TYPE.DIVIDE);
         assertEquals(new BigDecimal(1), calculator.getAccumulator());
+    }
+
+    @Test
+    public void testInvalidOperationThrowsException() {
+        try {
+            calculator.execute(null);
+            fail();
+        } catch (IllegalOperationException ignored) {}
     }
 
 }

@@ -23,7 +23,7 @@ public class Calculator {
         values.pop();
     }
 
-    public void execute(BinaryOperation.TYPE operation) {
+    public void execute(Operation.TYPE operation) {
         OperationFactory.getInstance().getOperation(operation).apply(values);
     }
 

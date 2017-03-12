@@ -28,7 +28,7 @@ public class OperationFactory {
         if (operationSupplier != null) {
             return operationSupplier.get();
         }
-        throw new IllegalOperationException("No such operation " + operationType.name().toUpperCase());
+        throw new IllegalOperationException("No such operation");
     }
 
 }
